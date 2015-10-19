@@ -1,0 +1,28 @@
+(function($) {
+  'use strict';
+
+  $(function() {
+    var $fullText = $('.admin-fullText');
+    $('#admin-fullscreen').on('click', function() {
+      $.AMUI.fullscreen.toggle();
+    });
+
+    $(document).on($.AMUI.fullscreen.raw.fullscreenchange, function() {
+      $fullText.text($.AMUI.fullscreen.isFullscreen ? '退出全屏' : '开启全屏');
+    });
+
+    $('.ext-admin-menu').on('click',function(){
+    	var url=$(this).attr('url-val');
+    	$.ajax({
+    		url : url,
+    		async : true,
+    		dataType : 'html',
+    		success : function(data) {
+    			$('#admin-content').html(data);
+    		}
+    	});
+    });
+
+    $('#index-a').click();
+  });
+})(jQuery);
