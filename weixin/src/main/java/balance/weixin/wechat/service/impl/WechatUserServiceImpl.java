@@ -19,9 +19,19 @@ import balance.weixin.wechat.service.WechatUserService;
 public class WechatUserServiceImpl implements WechatUserService {
 
 	@Override
-	public boolean subscribe(WechatUser user) {
+	public boolean subscribe(String openId) {
+		WechatUser user = DataSet.select(WechatUser.class, "open_id = ?", openId);
+		if (user == null)
+			user = new WechatUser();
+		int times = user.getTimes_();
+		user.setOpenId(openId);
 		user.setSubscribeTime(new Date());
-		return DataSet.insert(user);
+		user.setTimes_(++times);
+
+		if (times == 1)
+			return DataSet.insert(user);
+		else
+			return DataSet.update(user);
 	}
 
 	@Override
@@ -29,9 +39,13 @@ public class WechatUserServiceImpl implements WechatUserService {
 
 		WechatUser user = DataSet.select(WechatUser.class, "open_id = ?", openId);
 
-		user.setUnsubscribeTime(new Date());
+		if (user != null) {
 
-		return DataSet.update(user);
+			user.setUnsubscribeTime(new Date());
+
+			return DataSet.update(user);
+		} else
+			return true;
 	}
 
 }

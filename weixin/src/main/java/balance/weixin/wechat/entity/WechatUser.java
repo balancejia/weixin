@@ -22,6 +22,18 @@ public class WechatUser {
 
 	private Date unsubscribeTime;
 
+	private int times_;
+
+
+
+	public int getTimes_() {
+		return times_;
+	}
+
+	public void setTimes_(int times_) {
+		this.times_ = times_;
+	}
+
 	public long getId() {
 		return id;
 	}

@@ -11,7 +11,6 @@ import org.slf4j.LoggerFactory;
 import org.smart4j.framework.ioc.BeanHelper;
 import org.sword.wechat4j.WechatSupport;
 
-import balance.weixin.wechat.entity.WechatUser;
 import balance.weixin.wechat.service.impl.WechatConfigServiceImpl;
 import balance.weixin.wechat.service.impl.WechatUserServiceImpl;
 
@@ -36,31 +35,22 @@ public class ZiXunWechat extends WechatSupport {
 		// String msgId = wechatRequest.getMsgId();
 		logger.info(content);
 		defaultResp();
-		/*// 文本测试
-		if (content.equals("1")) {
-			responseText("你好，hello world!<a href=\"http://www.baidu.com\">这是链接</a>");
-		} else if (content.equals("2")) {
-			responseNew(
-					"图文消息",
-					"测试图文消息",
-					"http://upload.qqfuzhi.com/portal/showimg.php?img=e2dnYyk8PHEhIys9Y3t8Z3w9YGd8YXY9YmI9cHx%2BPHtnZ2NMen50f3xydz1wdHosPGFmYX8nTHEuJ3Z2IXFyJnUiICAqcnAnInYhcHJ2InAnKndycidwKyAgdnIqdiN1KitxdyojIysjcSAiJipyK3YqIXd1JCt1JyBxKnIkcCt1JyYkKysicCAjIiokKyogcHd1ICAhcXArciUjI3EhdyYjKiIncSclIiUqJyAkInEgKiV2IiEiJnEgKyp2cXV3cCEmJ3EjcHYqJHIrdytwIyYgIHIicHAgcXFwIiIldyIhNXIuISMrNXEuISMr",
-					"http://www.chengn.com");
-
-			// responseNew(title, description, picUrl, url);
-			//
-			// ArticleResponse item = new ArticleResponse();
-			// item.setTitle(title);
-			// item.setDescription(description);
-			// item.setUrl(url);
-			// item.setPicUrl(picUrl);
-			// responseNews(item);
-			//
-			// List<ArticleResponse> items = new ArrayList<ArticleResponse>();
-			// items.add(item);
-			// responseNews(items);
-		} else {
-			responseText("你好，你的输入为 " + content + "\n" + "请按照如下操作输入:\n" + "1 文本\n" + "2 图文\n");
-		}*/
+		/*
+		 * // 文本测试 if (content.equals("1")) {
+		 * responseText("你好，hello world!<a href=\"http://www.baidu.com\">这是链接</a>"
+		 * ); } else if (content.equals("2")) { responseNew( "图文消息", "测试图文消息",
+		 * "http://upload.qqfuzhi.com/portal/showimg.php?img=e2dnYyk8PHEhIys9Y3t8Z3w9YGd8YXY9YmI9cHx%2BPHtnZ2NMen50f3xydz1wdHosPGFmYX8nTHEuJ3Z2IXFyJnUiICAqcnAnInYhcHJ2InAnKndycidwKyAgdnIqdiN1KitxdyojIysjcSAiJipyK3YqIXd1JCt1JyBxKnIkcCt1JyYkKysicCAjIiokKyogcHd1ICAhcXArciUjI3EhdyYjKiIncSclIiUqJyAkInEgKiV2IiEiJnEgKyp2cXV3cCEmJ3EjcHYqJHIrdytwIyYgIHIicHAgcXFwIiIldyIhNXIuISMrNXEuISMr"
+		 * , "http://www.chengn.com");
+		 *
+		 * // responseNew(title, description, picUrl, url); // //
+		 * ArticleResponse item = new ArticleResponse(); //
+		 * item.setTitle(title); // item.setDescription(description); //
+		 * item.setUrl(url); // item.setPicUrl(picUrl); // responseNews(item);
+		 * // // List<ArticleResponse> items = new ArrayList<ArticleResponse>();
+		 * // items.add(item); // responseNews(items); } else {
+		 * responseText("你好，你的输入为 " + content + "\n" + "请按照如下操作输入:\n" + "1 文本\n"
+		 * + "2 图文\n"); }
+		 */
 	}
 
 	/**
@@ -74,7 +64,7 @@ public class ZiXunWechat extends WechatSupport {
 
 		String result = "图片消息picUrl:" + picUrl + ", MediaId:" + MediaId + ", MsgId:" + MsgId;
 		logger.info(result);
-		//responseText(result);
+		// responseText(result);
 		// responseImage(mediaId);
 		defaultResp();
 	}
@@ -90,7 +80,7 @@ public class ZiXunWechat extends WechatSupport {
 
 		String result = "语音消息Format:" + Format + ", MediaId:" + MediaId + ", MsgId:" + MsgId;
 		logger.info(result);
-		//responseText(result);
+		// responseText(result);
 		defaultResp();
 		// responseVoice(mediaId);
 
@@ -118,7 +108,7 @@ public class ZiXunWechat extends WechatSupport {
 
 		String result = "视频消息ThumbMediaId:" + ThumbMediaId + ", MediaId:" + MediaId + ", MsgId:" + MsgId;
 		logger.info(result);
-		//responseText(result);
+		// responseText(result);
 		defaultResp();
 
 		// 回复视频消息
@@ -145,7 +135,7 @@ public class ZiXunWechat extends WechatSupport {
 		String result = "地理位置消息Location_X:" + Location_X + ", Location_Y:" + Location_Y + ", Scale:" + Scale
 				+ ", Label:" + Label + ", MsgId:" + MsgId;
 		logger.info(result);
-		//responseText(result);
+		// responseText(result);
 		defaultResp();
 	}
 
@@ -161,7 +151,7 @@ public class ZiXunWechat extends WechatSupport {
 
 		String result = "链接消息Title:" + Title + ", Description:" + Description + ", Url:" + Url + ", MsgId:" + MsgId;
 		logger.info(result);
-		//responseText(result);
+		// responseText(result);
 		defaultResp();
 	}
 
@@ -174,7 +164,7 @@ public class ZiXunWechat extends WechatSupport {
 
 		String result = "未知消息msgType:" + msgType;
 		logger.info(result);
-		//responseText(result);
+		// responseText(result);
 		defaultResp();
 	}
 
@@ -188,7 +178,7 @@ public class ZiXunWechat extends WechatSupport {
 
 		String result = "扫描二维码事件FromUserName:" + FromUserName + ", Ticket:" + Ticket;
 		logger.info(result);
-		//responseText(result);
+		// responseText(result);
 		defaultResp();
 	}
 
@@ -202,9 +192,8 @@ public class ZiXunWechat extends WechatSupport {
 		String Ticket = wechatRequest.getTicket();
 		logger.info("关注事件：[fromUserName=" + FromUserName + ",ticket=" + Ticket + "]");
 		WechatUserService userService = BeanHelper.getBean(WechatUserServiceImpl.class);
-		WechatUser user = new WechatUser();
-		user.setOpenId(FromUserName);
-		userService.subscribe(user);
+
+		userService.subscribe(FromUserName);
 
 		WechatConfigService configService = BeanHelper.getBean(WechatConfigServiceImpl.class);
 		String result = configService.getVal("subscribe");
@@ -234,7 +223,7 @@ public class ZiXunWechat extends WechatSupport {
 	protected void view() {
 		String link = super.wechatRequest.getEventKey();
 		logger.info("点击菜单跳转链接时的事件推送link:" + link);
-		//responseText("点击菜单跳转链接时的事件推送link:" + link);
+		// responseText("点击菜单跳转链接时的事件推送link:" + link);
 		defaultResp();
 	}
 
@@ -258,7 +247,7 @@ public class ZiXunWechat extends WechatSupport {
 		String Precision = wechatRequest.getPrecision();
 		String result = "上报地理位置事件Latitude:" + Latitude + ", Longitude:" + Longitude + ", Precision:" + Precision;
 		logger.info(result);
-		//responseText(result);
+		// responseText(result);
 		defaultResp();
 	}
 
@@ -286,7 +275,7 @@ public class ZiXunWechat extends WechatSupport {
 		String result = "弹出地理位置选择器的事件Location_X:" + Location_X + ", Location_Y:" + Location_Y + ", Scale:" + Scale
 				+ ", Label:" + Label + ", Poiname:" + Poiname;
 		logger.info(result);
-		//responseText(result);
+		// responseText(result);
 		defaultResp();
 	}
 
@@ -302,7 +291,7 @@ public class ZiXunWechat extends WechatSupport {
 		}
 		String result = "弹出系统拍照发图的事件Count:" + Count + ", PicMd5Sum:" + PicMd5Sum;
 		logger.info(result);
-		//responseText(result);
+		// responseText(result);
 		defaultResp();
 	}
 
