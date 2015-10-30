@@ -219,6 +219,9 @@ public class ZiXunWechat extends WechatSupport {
 	protected void unSubscribe() {
 		String FromUserName = wechatRequest.getFromUserName();
 		logger.info("取消订阅事件：[fromUserName=" + FromUserName + "]");
+
+		WechatUserService userService = BeanHelper.getBean(WechatUserServiceImpl.class);
+		userService.unsunscribe(FromUserName);
 		String result = "感谢关注，欢迎再次订阅！";
 		logger.info(result);
 		responseText(result);
