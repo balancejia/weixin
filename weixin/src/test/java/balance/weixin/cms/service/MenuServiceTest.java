@@ -8,22 +8,23 @@ import org.smart4j.framework.ioc.BeanHelper;
 
 import balance.weixin.cms.bean.MenuBean;
 import balance.weixin.cms.entity.CmsMenu;
-import balance.weixin.cms.service.impl.MenuServiceImpl;
+import balance.weixin.wechat.service.WechatConfigService;
+import balance.weixin.wechat.service.impl.WechatConfigServiceImpl;
 
 public class MenuServiceTest {
 
-	 private MenuService service = BeanHelper.getBean(MenuServiceImpl.class);
+	 private WechatConfigService service = BeanHelper.getBean(WechatConfigServiceImpl.class);
 
 	@Test
 	public void testGetRootDisplayableMenu() {
-		List<MenuBean> list = service.getRootDisplayableMenu();
-		 Assert.assertEquals(list.size(), 8);
+		String c = service.getVal("subscribe");
+		System.out.println(c);
 	}
 
-	@Test
+
+	//@Test
 	public void testGetSubMenu(){
-		List<CmsMenu> list=service.getSubMenu(3);
-		 Assert.assertEquals(list.size(), 7);
+
 	}
 
 }
